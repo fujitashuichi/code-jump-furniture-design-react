@@ -1,33 +1,28 @@
-import React from 'react';
 import './App.css';
 import Header from "./components/Header.js";
 import Footer from "./components/Footer.js";
-import Home from "./pages/Home.js";
-import Products from "./pages/Products.js";
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import HomePage from "./pages/HomePage.js";
+import ProductsPage from "./pages/ProductsPage.js";
+import ItemPage from './pages/ItemPage.js';
+import NotFoundPage from "./pages/NotFoundPage.js";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 function App() {
-	const location = useLocation;
-
-	// ページパスに応じてwrapperを変える
-	let wrapperClass = "";
-	if (location === "/") {
-		wrapperClass = "wrapper1360";
-	} else if (location === "/products") {
-		wrapperClass = "wrapper800";
-	} else {
-		wrapperClass = "wrapper600";
-	}
-
-
 	return (
-		<div className="App">
-			<Header />
-				<div className={`${wrapperClass} wrapper`}>
-					<Home />
-				</div>
-			<Footer />
-		</div>
+		<BrowserRouter>
+			<div className="pageWrapper">
+				<Header />
+				<Routes>
+					<Route exact path='/' element={<HomePage />} />
+					<Route exact path='/index.html' element={<HomePage />} />
+					<Route exact path='/products' element={<ProductsPage />} />
+					<Route exact path='/item/:id' element={<ItemPage />} />
+					<Route path='*' element={<NotFoundPage />} />
+				</Routes>
+				<Footer />
+			</div>
+		</BrowserRouter>
 	);
 }
 

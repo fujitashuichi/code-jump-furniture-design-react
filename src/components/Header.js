@@ -1,26 +1,38 @@
-import logo from "../img/logo.svg"
+import { useRef } from "react";
 
 function Header() {
+    const toggleBtnRef = useRef(null);
+    const navRef = useRef(null);
+    const maskRef = useRef(null);
+
+
+    const handleToggleBtn = () => {
+        toggleBtnRef.current.classList.toggle("open");
+        navRef.current.classList.toggle("open");
+        maskRef.current.classList.toggle("open");
+    }
+
+
     return (
         <header id="header">
-            <h1 className="site-title">
-                <a href="/index.html">
-                    <img src = {logo} alt="Furniture Design" />
+            <h1 className="siteTitle">
+                <a href="/">
+                    <img src="/img/logo.svg" alt="Furniture Design" />
                 </a>
             </h1>
-            <nav id="nav">
-                <ul id="nav-menu">
-                    <li><a href="/pages/products.html">PRODUCTS</a></li>
-                    <li><a href="/pages/about.html">ABOUT</a></li>
-                    <li><a href="/pages/company.html">COMPANY</a></li>
+            <nav ref={navRef} id="nav">
+                <ul id="navMenu">
+                    <li><a href="/products">PRODUCTS</a></li>
+                    <li><a href="/about">ABOUT</a></li>
+                    <li><a href="/company">COMPANY</a></li>
                     <li><a href="mailto:company@example.co?subject=Contact">CONTACT</a></li>
                 </ul>
             </nav>
-            <div className="toggle-btn">
+            <div ref={toggleBtnRef} className="toggleBtn" onClick={() => handleToggleBtn()}>
                 <span></span>
                 <span></span>
             </div>
-            <div id="mask"></div>
+            <div ref={maskRef} id="mask"></div>
         </header>
     )
 }
