@@ -7,7 +7,7 @@ function HomePage() {
     return (
         <main>
             <ProductList pageNumber={1} productCount={8} />
-            <div id="goto-productsBtn" style={styles.btn}>
+            <div id="goto-productsBtn" style={styles.goToProductsBtn}>
                 <Link to="/products">View More</Link>
             </div>
         </main>
@@ -15,9 +15,9 @@ function HomePage() {
 }
 
 const styles = {
-    btn: {
-        textAlign: "center",
-        marginBottom: "60px"
+    goToProductsBtn: {
+        width: "fit-content",
+        margin: "0 auto 60px auto",
     }
 }
 

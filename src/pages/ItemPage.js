@@ -27,7 +27,7 @@ function ItemPage() {
         }
 
         return (
-            <div id='content'>
+            <div id='content' style={styles.content}>
                 <h2 className="pageTitle">{product.name}</h2>
                 <div className="flex" style={styles.flex}>
                     <div className="imgWrapper" style={styles.imgWrapper}>
@@ -50,14 +50,17 @@ function ItemPage() {
     return (
         <main>
             {content()}
-            <button id="goto-products-btn" style={styles.gotoProductsBtn}>
+            <div id="goto-products-btn" style={styles.gotoProductsBtn}>
                 <Link to="/products">Back To Products</Link>
-            </button>
+            </div>
         </main>
     )
 }
 
 const styles = {
+    content: {
+        marginBottom: "60px",
+    },
     flex: {
         display: "flex",
         width: "100%"
@@ -93,10 +96,8 @@ const styles = {
         fontSize: "0.9rem"
     },
     gotoProductsBtn: {
-        margin: "0 auto 100px auto",
-        background: "#fff",
-        border: "none",
-        fontSize: "1.2rem",
+        width: "fit-content",
+        margin: "0 auto 60px auto",
     }
 }
 

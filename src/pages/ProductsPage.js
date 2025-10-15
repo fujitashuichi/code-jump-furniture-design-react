@@ -74,7 +74,7 @@ const styles = {
         display: "flex",
         width: "fit-content",
         columnGap: "25px",
-        margin: "0 auto",
+        margin: "0 auto 60px auto",
     }
 }
 
