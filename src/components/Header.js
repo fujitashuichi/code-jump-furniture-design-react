@@ -17,16 +17,16 @@ function Header() {
     return (
         <header id="header">
             <h1 className="siteTitle">
-                <Link to="/">
+                <Link to="/" className="link">
                     <img src="/img/logo.svg" alt="Furniture Design" />
                 </Link>
             </h1>
             <nav ref={navRef} id="nav">
                 <ul id="navMenu">
-                    <li><Link to="/products">PRODUCTS</Link></li>
-                    <li><Link to="/about">ABOUT</Link></li>
-                    <li><Link to="/company">COMPANY</Link></li>
-                    <li><Link to="mailto:company@example.co?subject=Contact">CONTACT</Link></li>
+                    <li><Link to="/products" className="link">PRODUCTS</Link></li>
+                    <li><Link to="/about" className="link">ABOUT</Link></li>
+                    <li><Link to="/company" className="link">COMPANY</Link></li>
+                    <li><Link to="mailto:company@example.co?subject=Contact" className="link">CONTACT</Link></li>
                 </ul>
             </nav>
             <div ref={toggleBtnRef} className="toggleBtn" onClick={() => handleToggleBtn()}>
