@@ -31,7 +31,7 @@ function ItemPage() {
                 <h2 className="pageTitle">{product.name}</h2>
                 <div className="flex" style={styles.flex}>
                     <div className="imgWrapper" style={styles.imgWrapper}>
-                        <img src={`${product.img}`} alt='product' />
+                        <img src={`${product.img}`} alt={`${product.name} の画像`} />
                     </div>
                     <div className="textWrapper" style={styles.textWrapper}>
                         {texts}
