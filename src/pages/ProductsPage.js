@@ -42,13 +42,19 @@ function ProductsPage() {
         }
 
         // ページャーの数字をリンクに変換
-        const numberBtns = numbers().map((num, key) => <li key={key}><Link to={`/product/${num}`}></Link></li>);
+        const numberBtns = () => {
+            const btn = (key, num, isCurrent) => {
+                const style = isCurrent ? { color: "blue", textDecoration: "underline" } : {};
+                return <li key={key}><Link to={`/products/${num}`} style={style}>{num}</Link></li>
+            }
+            return numbers().map((num, key) => key === id - 1 ? btn(key, num, true) : btn(key, num, false));
+        }
 
         return (
-            <ul className="navLinkList">
+            <ul className="navLinkList" style={styles.navLinkList}>
                 <li><Link to='/products/1'>First</Link></li>
-                {numberBtns}
-                <li><Link to='/products/lastPageNumber'>End</Link></li>
+                {numberBtns()}
+                <li><Link to={`/products/${lastPageNumber}`}>End</Link></li>
             </ul>
         );
     };
@@ -61,6 +67,15 @@ function ProductsPage() {
             {pager()}
         </main>
     )
+}
+
+const styles = {
+    navLinkList: {
+        display: "flex",
+        width: "fit-content",
+        columnGap: "25px",
+        margin: "0 auto",
+    }
 }
 
 export default ProductsPage
