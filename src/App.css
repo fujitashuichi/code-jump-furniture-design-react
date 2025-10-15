@@ -2,7 +2,7 @@ ul {
 	list-style: none;
 }
 
-.link {
+a, .link {
 	display: block;
 	text-decoration: none;
 	color: #000;

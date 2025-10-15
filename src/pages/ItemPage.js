@@ -1,12 +1,17 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import products from '../data/productsData';
 
 
 function ItemPage() {
-    const location = useLocation().pathname;
-    const id = location.split("/").pop();
+    const currentPath = useLocation().pathname;
+    const id = currentPath.split("/").pop();
     const product = products[id];
+
+    const navigate = useNavigate();
+    if (id < 0 || id >= products.length) {
+        navigate("/404/item");
+    }
 
     const content = () => {
         const texts = product.texts.map((text, id) => <p key={id} style={styles.text}>{text}</p>);

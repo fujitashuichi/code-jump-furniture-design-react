@@ -17,7 +17,9 @@ function App() {
 					<Route exact path='/' element={<HomePage />} />
 					<Route exact path='/index.html' element={<HomePage />} />
 					<Route exact path='/products' element={<ProductsPage />} />
+					<Route exact path='/products/:id' element={<ProductsPage />} />
 					<Route exact path='/item/:id' element={<ItemPage />} />
+					<Route path='/404/:id' element={<NotFoundPage />} />
 					<Route path='*' element={<NotFoundPage />} />
 				</Routes>
 				<Footer />
