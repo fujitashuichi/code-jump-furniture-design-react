@@ -1,5 +1,6 @@
 import React from 'react';
 import products from "../data/productsData.js";
+import { Link } from 'react-router-dom';
 
 function ProductList({ pageNumber, productCount }) {
     const items = () => {
@@ -12,11 +13,11 @@ function ProductList({ pageNumber, productCount }) {
             const product = products[i];
             const item =
                 <li key={i} id={`item-${i}`} className='item' style={styles.item}>
-                    <a href={`/item/${i}`}>
+                    <Link to={`/item/${i}`}>
                         <img src={`${product.img}`} alt={`${product.name}の画像`} style={styles.img} />
                         <p className='itemName' style={styles.name}>{product.name}</p>
                         <p className='itemPrice' style={styles.price}>{product.price}</p>
-                    </a>
+                    </Link>
                 </li>
 
             items.push(item);

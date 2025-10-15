@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import products from '../data/productsData';
 
 
@@ -46,7 +46,7 @@ function ItemPage() {
         <main>
             {content()}
             <button id="goto-products-btn" style={styles.gotoProductsBtn}>
-                <a href="/products">Back To Products</a>
+                <Link to="/products">Back To Products</Link>
             </button>
         </main>
     )

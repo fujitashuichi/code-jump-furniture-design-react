@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
     const toggleBtnRef = useRef(null);
@@ -16,16 +17,16 @@ function Header() {
     return (
         <header id="header">
             <h1 className="siteTitle">
-                <a href="/">
+                <Link to="/">
                     <img src="/img/logo.svg" alt="Furniture Design" />
-                </a>
+                </Link>
             </h1>
             <nav ref={navRef} id="nav">
                 <ul id="navMenu">
-                    <li><a href="/products">PRODUCTS</a></li>
-                    <li><a href="/about">ABOUT</a></li>
-                    <li><a href="/company">COMPANY</a></li>
-                    <li><a href="mailto:company@example.co?subject=Contact">CONTACT</a></li>
+                    <li><Link to="/products">PRODUCTS</Link></li>
+                    <li><Link to="/about">ABOUT</Link></li>
+                    <li><Link to="/company">COMPANY</Link></li>
+                    <li><Link to="mailto:company@example.co?subject=Contact">CONTACT</Link></li>
                 </ul>
             </nav>
             <div ref={toggleBtnRef} className="toggleBtn" onClick={() => handleToggleBtn()}>

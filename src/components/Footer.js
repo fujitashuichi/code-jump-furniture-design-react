@@ -1,17 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Footer() {
     return (
         <footer id="footer">
             <ul id="sns">
                 <li>
-                    <a href="https://instagram.com" target="_blank" rel="noreferrer noopener">INSTAGRAM</a>
+                    <Link to="https://instagram.com" target="_blank" rel="noreferrer noopener">INSTAGRAM</Link>
                 </li>
                 <li>
-                    <a href="https://x.com" target="_blank" rel="noreferrer noopener">X</a>
+                    <Link to="https://x.com" target="_blank" rel="noreferrer noopener">X</Link>
                 </li>
                 <li>
-                    <a href="https://facebook.com" target="_blank" rel="noreferrer noopener">FACEBOOK</a>
+                    <Link to="https://facebook.com" target="_blank" rel="noreferrer noopener">FACEBOOK</Link>
                 </li>
             </ul>
             <p id="copy-right">© Furniture Design</p>

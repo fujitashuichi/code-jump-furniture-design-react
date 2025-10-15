@@ -1,5 +1,6 @@
 import React from "react"
 import ProductList from "../components/ProductList.js"
+import { Link } from "react-router-dom"
 
 
 function HomePage() {
@@ -7,7 +8,7 @@ function HomePage() {
         <main>
             <ProductList pageNumber={1} productCount={8} />
             <div id="goto-productsBtn" style={styles.btn}>
-                <a href="/products">View More</a>
+                <Link to="/products">View More</Link>
             </div>
         </main>
     )
